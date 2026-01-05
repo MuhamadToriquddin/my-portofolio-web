@@ -1,0 +1,25 @@
+import { useParams } from "react-router-dom";
+import { getArticle } from "@/utils/get_article";
+
+function DetailArticlePage() {
+  const {id} = useParams()
+  if (!id){
+    return(
+      <div></div>
+    )
+  }
+  const data = getArticle(id)
+  return (
+    <article className="w-full pt-[150px] min-h-dvh space-y-5">
+      <title></title>
+      <section className="space-y-2">
+        
+        <h2>{data.title}</h2>
+        <p>{data.description}</p>
+      </section>
+
+    </article>
+  );
+};
+
+export default DetailArticlePage;

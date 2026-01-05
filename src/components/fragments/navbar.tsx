@@ -1,19 +1,21 @@
 import { useIsPhoneDevice } from "../../hooks/useIsPhoneDevice";
-// import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import DecryptedText from "../ui/decrypted_text";
 import { useIsScrolled } from "../../hooks/useIsScrolling";
+import { useState } from "react";
+import ButtonSound from "../ui/button_sound";
 
 const menuList = [
-  { label: "AboutMe", url: "/about-me" },
-  { label: "Works", url: "/works" },
-  { label: "Article", url: "/article" },
-  { label: "Contact", url: "/contact" },
+  { label: "AboutMe", url: "/about-me", value:"about-me" },
+  { label: "Works", url: "/works", value:"works" },
+  { label: "Articles", url: "/articles", value:"articles" },
+  { label: "Contact", url: "/contact", value:"contact" },
 ];
 
 function NavBar() {
   const isScrolled = useIsScrolled()
   const isPhone = useIsPhoneDevice();
-    console.log(isPhone)
+  const [active,setActive] = useState<string>("about-me") 
   return (
     <>
       {isPhone ? (
@@ -21,7 +23,7 @@ function NavBar() {
           {/* <img src="" alt="logo" className="logo-navbar-desktop" /> */}
           <nav className="flex items-center justify-evenly w-[60%]">
             {menuList.map((item, i) => (
-              <a key={i} className="menu-desktop" href={item.url}>
+              <a key={i} className="" href={item.url} onClick={()=>setActive(item.value)}>
                 {/* <DecryptedText text={item.label}></DecryptedText> */}
               </a>
             ))}
@@ -33,17 +35,17 @@ function NavBar() {
             <h1 className="font-heading text-5xl">TQ<span className="font-heading text-2xl text-blue-500" >Code</span></h1>
             <li className="flex items-center justify-between w-[60%]  ">
               {menuList.map((item, i) => (
-              <a key={i} className="text-3xl font-heading" href={item.url}>
+              <Link key={i} to={item.url}  className={`text-3xl font-heading ${item.value == active?"text-black":"text-slate-500 hover:text-slate-600"}`}  onClick={()=>setActive(item.value)}>
                 <DecryptedText
                   text={item.label}
                   maxIterations={20}
                   useOriginalCharsOnly
                   animateOn="hover"
                 ></DecryptedText>
-              </a>
+              </Link>
             ))}
-            <button>TES</button>
-            <button>EN</button>
+            <ButtonSound/>
+            
             </li>
           </nav>
           

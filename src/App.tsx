@@ -3,6 +3,7 @@ import AboutMePage from "./pages/about_me";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ContactPage from "./pages/contact";
 import WorkPage from "./pages/work";
+import ArticlePage from "./pages/article";
 function App() {
   return (
     <BrowserRouter>
@@ -11,7 +12,10 @@ function App() {
           <Route index element={<AboutMePage/>}/>
           <Route path="about-me" element={<AboutMePage/>} />
           <Route path="works" element={<WorkPage/>}/>
-          <Route path="article" />
+          <Route path="articles"  >
+            <Route index element={<ArticlePage/>}></Route>
+            <Route path=":id"></Route>
+          </Route>
           <Route path="contact" element={<ContactPage/>} />
         </Route>
       </Routes>
