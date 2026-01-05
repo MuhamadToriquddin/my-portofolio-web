@@ -2,6 +2,7 @@ import MainLayout from "./layouts/main_layout";
 import AboutMePage from "./pages/about_me";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ContactPage from "./pages/contact";
+import WorkPage from "./pages/work";
 function App() {
   return (
     <BrowserRouter>
@@ -9,7 +10,7 @@ function App() {
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<AboutMePage/>}/>
           <Route path="about-me" element={<AboutMePage/>} />
-          <Route path="works" />
+          <Route path="works" element={<WorkPage/>}/>
           <Route path="article" />
           <Route path="contact" element={<ContactPage/>} />
         </Route>
