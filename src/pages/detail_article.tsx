@@ -15,7 +15,7 @@ function DetailArticlePage() {
       <section className="space-y-2">
         
         <h2>{data.title}</h2>
-        <p>{data.description}</p>
+        <p>{data.content}</p>
       </section>
 
     </article>
