@@ -1,14 +1,22 @@
+import { useNavigate } from "react-router-dom";
+
 function WorkCard({
+  id,
   image,
   type,
   title,
 }: {
+  id:string,
   image: string;
   type: string;
   title: string;
 }) {
+  const navigate = useNavigate()
+  const handleClick = (id:string)=>{
+    navigate(`/works/${id}`);
+  }
   return (
-    <div className="border-4 h-[300px] group border-black relative">
+    <div onClick={()=>handleClick(id)}  className="border-4 h-[300px] group border-black relative">
       <div
         className={`w-full h-full group-hover:opacity-100 opacity-0 transition-all duration-300 bg-cover `}
         style={{ backgroundImage: `url(${image})` }}

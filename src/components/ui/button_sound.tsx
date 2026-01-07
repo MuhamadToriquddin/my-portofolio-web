@@ -1,11 +1,17 @@
 import soundOn from "../../assets/icon/sound on.png";
-
+import clickSound from "../../assets/audio/click.mp3"
+import useSound from 'use-sound';
+import soundOff from "../../assets/icon/sound off.png"
 
 function ButtonSound() {
+  const isPlaying = true
+  const [play]=useSound(clickSound,{volume:0.2})
+  const onClick = ()=>{
+    play()
+  }
   return (
-    <button className="border-4 hover:border-black hover:bg-gray-100  p-1 border-slate-500 transition-colors">
-      {/* Gunakan tag img dan perbesar ukurannya, misal w-8 (32px) */}
-      <img src={soundOn} alt="Sound On" className="w-8 h-8 object-contain" />
+    <button onClick={onClick}  className="border-4 border-black hover:bg-gray-100  p-1  transition-colors">
+      <img src={isPlaying?soundOn:soundOff} alt="Sound button" className="w-8 h-8 object-contain" />
     </button>
   );
 }

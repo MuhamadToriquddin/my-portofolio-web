@@ -16,7 +16,7 @@ export function WorkWrapperDesktop(
     return(
         <div className="w-full grid grid-cols-1 md:grid-cols-2 px-5 gap-5">
             {works.map((item,i)=>(
-                <WorkCard key={i} title={item.title} image={item.image_head} type={item.type}/>
+                <WorkCard key={i} title={item.title} image={item.image_head} id={item.id} type={item.type}/>
             ))}
         </div>
     )

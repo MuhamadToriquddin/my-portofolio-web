@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getArticle } from "@/utils/get_article";
+import { getArticle } from "@/lib/get_article";
 
 function DetailArticlePage() {
   const {id} = useParams()
