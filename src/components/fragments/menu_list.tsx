@@ -12,7 +12,7 @@ function MenuList({
       {list.map((item, i) => (
         <button
           key={i}
-          onClick={() => func}
+          onClick={() => func(item)}
           className={`font-heading text-3xl ${
             activeTab == item
               ? "text-black"
