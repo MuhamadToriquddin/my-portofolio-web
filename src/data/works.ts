@@ -4,7 +4,7 @@ export const works = [
     image_head:"",
     image_body:[""], 
     title:"Forge API",
-    description:"",
+    description:"sasadasdasda",
     tech:["TS","Express"],
     type:"CLI Tool",
   },

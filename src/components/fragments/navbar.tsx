@@ -2,8 +2,8 @@ import { useIsPhoneDevice } from "../../hooks/useIsPhoneDevice";
 import { Link } from "react-router-dom";
 import DecryptedText from "../ui/decrypted_text";
 import { useIsScrolled } from "../../hooks/useIsScrolling";
-import { useState } from "react";
 import ButtonSound from "../ui/button_sound";
+import { useLocation } from "react-router-dom";
 
 const menuList = [
   { label: "AboutMe", url: "/about-me", value:"about-me" },
@@ -15,7 +15,8 @@ const menuList = [
 function NavBar() {
   const isScrolled = useIsScrolled()
   const isPhone = useIsPhoneDevice();
-  const [active,setActive] = useState<string>("about-me") 
+  const location = useLocation()
+  
   return (
     <>
       {isPhone ? (
@@ -23,7 +24,7 @@ function NavBar() {
           {/* <img src="" alt="logo" className="logo-navbar-desktop" /> */}
           <nav className="flex items-center justify-evenly w-[60%]">
             {menuList.map((item, i) => (
-              <a key={i} className="" href={item.url} onClick={()=>setActive(item.value)}>
+              <a key={i} className="" href={item.url} >
                 {/* <DecryptedText text={item.label}></DecryptedText> */}
               </a>
             ))}
@@ -33,9 +34,10 @@ function NavBar() {
         <header className={`w-full h-30 fixed flex bg-white justify-center items-center top-0 z-30 py-1 px-15 ${isScrolled?"shadow-md":" shadow-none"}`}>
           <nav className="flex justify-between w-full ">
             <h1 className="font-heading text-5xl">TQ<span className="font-heading text-2xl text-blue-500" >Code</span></h1>
+            
             <li className="flex items-center justify-between w-[60%]  ">
               {menuList.map((item, i) => (
-              <Link key={i} to={item.url}  className={`text-3xl font-heading ${item.value == active?"text-black":"text-slate-500 hover:text-slate-600"}`}  onClick={()=>setActive(item.value)}>
+              <Link key={i} to={item.url}  className={`text-3xl font-heading ${item.value == location.pathname.split("/")[1]?"text-black":"text-slate-500 hover:text-slate-600"}`}  >
                 <DecryptedText
                   text={item.label}
                   maxIterations={20}

@@ -10,7 +10,7 @@ function DetailWorkPage() {
 
   const data = getWorks(id)
   return (
-    <section className="pt-[150px] gap-4 px-[40px] grid grid-cols-2">
+    <section className="pt-[150px] gap-6 px-[40px] grid grid-cols-2">
         {/* picture container */}
         <ImageContainer img={data.image_body} />
         {/* teks container */}

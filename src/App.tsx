@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ContactPage from "./pages/contact";
 import WorkPage from "./pages/work";
 import ArticlePage from "./pages/article";
-import DetailLayout from "./layouts/detail_layout";
+import DetailLayoutWork from "./layouts/detail_layout_work";
 import DetailWorkPage from "./pages/detail_work";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Route path="about-me" element={<AboutMePage/>} />
           <Route path="works">
             <Route index element={<WorkPage/>}></Route>
-            <Route path=":id" element={<DetailLayout/>}>
+            <Route path=":id" element={<DetailLayoutWork/>}>
               <Route index element={<DetailWorkPage/>}></Route>
             </Route>
           </Route>

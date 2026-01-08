@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { NavbarDetail } from "@/components/fragments/navbar_detail";
-function DetailLayout(){
+function DetailLayoutWork(){
     return(
         <>
-            <NavbarDetail/>
+            <NavbarDetail destination="/works"/>
             <main>
                 <Outlet/>
             </main>
@@ -12,4 +12,4 @@ function DetailLayout(){
     )
 }
 
-export default DetailLayout
+export default DetailLayoutWork
