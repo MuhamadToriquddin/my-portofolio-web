@@ -4,7 +4,7 @@ import useSound from 'use-sound';
 import soundOff from "../../assets/icon/sound off.png"
 
 function ButtonSound() {
-  const isPlaying = true
+  const isPlaying = false
   const [play]=useSound(clickSound,{volume:0.2})
   const onClick = ()=>{
     play()

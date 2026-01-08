@@ -66,6 +66,24 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+.pixel-border {
+  border: 4px solid currentColor;
+  box-shadow: 
+    4px 0 0 0 currentColor,
+    -4px 0 0 0 currentColor,
+    0 4px 0 0 currentColor,
+    0 -4px 0 0 currentColor;
+}
+
+.pixel-border-foreground{
+  border: 4px solid slategrey;
+  box-shadow: 
+    4px 0 0 0 slategrey,
+    -4px 0 0 0 slategrey,
+    0 4px 0 0 slategrey,
+    0 -4px 0 0 slategrey;
+}
+
 body{
   width: 100%;
   height: 150dvh;
