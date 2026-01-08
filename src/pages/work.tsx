@@ -1,9 +1,8 @@
 
-import { WorkWrapperDesktop } from "@/components/fragments/work_wrapper"
+import { WorkWrapper } from "@/components/fragments/work_wrapper"
 import { useState } from "react"
 import MenuList from "@/components/fragments/menu_list"
 import { workCategories } from "@/data/categories"
-import { works } from "@/data/works"
 
 function WorkPage(){
     const [category,setCategory]=useState<string>("All")  
@@ -11,7 +10,7 @@ function WorkPage(){
     return (
         <section className="w-full pt-[150px] min-h-dvh space-y-5">
             <MenuList list={workCategories} func={setCategory} activeTab={category}/>
-            <WorkWrapperDesktop works={works}/>
+            <WorkWrapper type={category}/>
         </section>
     )
 }
