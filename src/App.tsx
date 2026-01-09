@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<AboutMePage/>}/>
-          <Route path="about-me" element={<AboutMePage/>} />
+          
           <Route path="works">
             <Route index element={<WorkPage/>}></Route>
             <Route path=":id" element={<DetailLayoutWork/>}>

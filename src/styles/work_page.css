@@ -1,0 +1,135 @@
+.pixel-border {
+  border: 4px solid currentColor;
+  box-shadow: 
+    4px 0 0 0 currentColor,
+    -4px 0 0 0 currentColor,
+    0 4px 0 0 currentColor,
+    0 -4px 0 0 currentColor;
+}
+
+.pixel-border:hover {
+  border: 4px solid blue;
+  transition: all;
+  transition-duration: 150ms;
+  box-shadow: 
+    4px 0 0 0 blue,
+    -4px 0 0 0 blue,
+    0 4px 0 0 #0000ff,
+    0 -4px 0 0 blue;
+}
+
+.card-wrapper {
+  user-select: none;   
+  height: 300px;       
+  position: relative;  
+  overflow: hidden;    
+  transition: border-color 0.3s ease;
+}
+
+.background-image {
+  position: absolute;           
+  top: 0;                       
+  right: 0;                     
+  bottom: 0;                    
+  left: 0;                      
+  width: 100%;                  
+  height: 100%;                 
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+  transition-property: transform;             
+  transition-duration: 500ms;                 
+  transition-timing-function: ease-in-out;
+}
+
+.card-wrapper:hover .background-element {      /* group-hover:scale-105 */
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;          
+  top: 0;                      
+  right: 0;                    
+  bottom: 0;                   
+  left: 0;                     
+  background-color: rgba(0, 0, 0, 0.2); 
+  backdrop-filter: blur(2px); 
+  opacity: 1; 
+  transition: all 300ms ease; 
+}
+
+.card-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.content-card-container{
+  position: absolute;  
+  left: 20px;          
+  bottom: 20px;        
+  width: 600px;        
+  z-index: 10;         
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-family: 'HeadingFont', sans-serif;
+  color: #ffffff;
+  transition: all 500ms ease;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) 
+          drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .card-title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+.card-wrapper:hover .card-title {
+  color: #3b82f6;
+}
+
+.card-label {
+
+  font-family: 'ParagraphFont', sans-serif; /* Sesuaikan dengan font kamu */
+  
+  /* w-fit */
+  width: fit-content;
+  
+  /* px-4 py-1 */
+  padding-left: 1rem;   /* 16px */
+  padding-right: 1rem;  /* 16px */
+  padding-top: 0.25rem; /* 4px */
+  padding-bottom: 0.25rem; /* 4px */
+  
+  /* bg-black text-white text-xl */
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.25rem;   /* 20px */
+  
+  /* gap-2 & layout (karena ada gap, asumsikan flex) */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;          /* 8px */
+  
+  /* transition-all duration-300 */
+  transition: all 300ms ease;
+}
+
+/* md:text-xl (Ukurannya tetap sama dengan mobile di input kamu) */
+@media (min-width: 768px) {
+  .card-label {
+    font-size: 1.25rem;
+  }
+}
+
+/* group-hover:bg-blue-500 group-hover:text-white */
+.custom-card:hover .card-label {
+  background-color: #3b82f6; /* Blue-500 */
+  color: #ffffff;
+}

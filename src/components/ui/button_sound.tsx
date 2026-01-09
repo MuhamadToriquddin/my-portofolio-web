@@ -10,7 +10,7 @@ function ButtonSound() {
     play()
   }
   return (
-    <button onClick={onClick}  className="border-4 border-black hover:bg-gray-100  p-1  transition-colors">
+    <button onClick={onClick}  className="border-4 border-button-fg  p-1  transition-colors">
       <img src={isPlaying?soundOn:soundOff} alt="Sound button" className="w-8 h-8 object-contain" />
     </button>
   );
