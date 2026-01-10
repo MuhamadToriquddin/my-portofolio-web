@@ -1,6 +1,6 @@
 export function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="w-full flex items-center border-3 border-background  h-[150px]">
+    <div className="w-full flex items-center border-5 border-background  h-[150px]">
       <div className="w-full">
         <p className="text-background text-center text-6xl font-heading">
           {value}

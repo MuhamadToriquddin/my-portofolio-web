@@ -27,7 +27,7 @@ export const works = [
   {
     id:"03",
     image_head:simTravelHead,
-    image_body:[""], 
+    image_body:[simTravelBody1,simTravelBody2], 
     title:"SIM Travel",
     description:"",
     tech:["Next","Supabase"],

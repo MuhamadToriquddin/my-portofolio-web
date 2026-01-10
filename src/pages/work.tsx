@@ -3,7 +3,7 @@ import { WorkWrapper } from "@/components/fragments/work_wrapper"
 import { useState } from "react"
 import MenuList from "@/components/fragments/menu_list"
 import { workCategories } from "@/data/categories"
-import "../styles/work_page.css"
+
 
 function WorkPage(){
     const [category,setCategory]=useState<string>("All")  

@@ -15,8 +15,8 @@ function MenuList({
           onClick={() => func(item)}
           className={`font-heading text-3xl ${
             activeTab == item
-              ? "text-black"
-              : "text-slate-500 hover:text-slate-600"
+              ? "text-foreground"
+              : "text-muted hover:text-hover"
           }`}
         >
           [{item}]

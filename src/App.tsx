@@ -5,7 +5,9 @@ import ContactPage from "./pages/contact";
 import WorkPage from "./pages/work";
 import ArticlePage from "./pages/article";
 import DetailLayoutWork from "./layouts/detail_layout_work";
+import DetailLayoutArticle from "./layouts/detail_layout_article";
 import DetailWorkPage from "./pages/detail_work";
+import DetailArticlePage from "./pages/detail_article";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           </Route>
           <Route path="articles"  >
             <Route index element={<ArticlePage/>}></Route>
-            <Route path=":id"></Route>
+            <Route path=":id" element={<DetailLayoutArticle/>}>
+              <Route index element={<DetailArticlePage/>}></Route>
+            </Route>
           </Route>
           <Route path="contact" element={<ContactPage/>} />
         </Route>

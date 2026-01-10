@@ -10,8 +10,8 @@ function DetailArticlePage() {
   }
   const data = getArticle(id)
   return (
-    <article className="w-full pt-[150px] min-h-dvh space-y-5">
-      <title></title>
+    <article className="w-full pt-[150px] min-h-dvh space-y-5 bg-blue-400">
+      
       <section className="space-y-2">
         
         <h2>{data.title}</h2>
