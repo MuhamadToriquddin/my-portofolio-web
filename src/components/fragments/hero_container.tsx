@@ -2,8 +2,14 @@ import PixelTransition from "../ui/PixelTransition";
 import cardOri from "../../assets/image/aboutme/card-ori.webp";
 import cardCartoon from "../../assets/image/aboutme/card-cartoon.webp";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router";
 
 export function HeroContainer() {
+  const navigate = useNavigate()
+  const clickCollaborate = ()=>{
+    navigate("/contact")
+  }
+  
   return (
     <div className="w-full grid md:grid-cols-2">
       <div className="flex  items-center pl-15">
@@ -13,8 +19,11 @@ export function HeroContainer() {
           </h1>
           <div className=""></div>
           <div className="flex space-x-0 py-2">
-            <Button label="Let's Collaborate" onClick={()=>console.log("tes")} type="" />
-            <Button label="View My CV" onClick={()=>console.log("tes")} type="" />
+            <Button label="Let's Collaborate" onClick={clickCollaborate} type="" />
+            <a href="/master cv.pdf" download={"CV Muhamad Toriquddin"}>
+              <Button label="View My CV" type="" />
+            </a>
+            
           </div>
         </div>
       </div>
